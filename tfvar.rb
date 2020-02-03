@@ -2,16 +2,16 @@
 class Tfvar < Formula
   desc "Terraform's variable definitions template generator."
   homepage "https://github.com/shihanng/tfvar"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/shihanng/tfvar/releases/download/v0.0.1/tfvar_0.0.1_darwin_amd64.tar.gz"
-    sha256 "290080742ca3cee0a938a44dcd673ae82b56b21616042201da16d67f5b5b5928"
+    url "https://github.com/shihanng/tfvar/releases/download/v0.0.2/tfvar_darwin_amd64.tar.gz"
+    sha256 "4f0cef4da75ba1cea14c673e82496b4530c867ca7074ee6c280f9365947811a7"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.0.1/tfvar_0.0.1_linux_amd64.tar.gz"
-      sha256 "0790948a93e017f5fe60eb93159e910592d29ef0f2dc15272f50368733b09b86"
+      url "https://github.com/shihanng/tfvar/releases/download/v0.0.2/tfvar_linux_amd64.tar.gz"
+      sha256 "f131496324b98c8f49ff13b1b099d3aae5c6cfe338423ece6f930e99b5aa2548"
     end
   end
 
