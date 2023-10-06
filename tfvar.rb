@@ -5,20 +5,20 @@
 class Tfvar < Formula
   desc "Terraform's variable definitions template generator."
   homepage "https://github.com/shihanng/tfvar"
-  version "0.8.0"
+  version "0.8.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.8.0/tfvar_darwin_arm64.tar.gz"
-      sha256 "4caf7032deccc73235ab9289702642b24cbe93133e4dc2d43bcc1c64c232dd17"
+    if Hardware::CPU.intel?
+      url "https://github.com/shihanng/tfvar/releases/download/v0.8.1/tfvar_darwin_amd64.tar.gz"
+      sha256 "929c2ce3c41e5ec19febba97021c99dc6bd639e808218f765b4fbad4ab4254a8"
 
       def install
         bin.install Dir['tfvar']
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.8.0/tfvar_darwin_amd64.tar.gz"
-      sha256 "1c6d78c581e7ecf3501a80c392c14822804956ab84de1f8e896b3e6356cb3f43"
+    if Hardware::CPU.arm?
+      url "https://github.com/shihanng/tfvar/releases/download/v0.8.1/tfvar_darwin_arm64.tar.gz"
+      sha256 "59d968d61b9e597dcb116eccd50361d078f87bde638c843cacca9d2bf8e5f489"
 
       def install
         bin.install Dir['tfvar']
@@ -27,25 +27,25 @@ class Tfvar < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.8.0/tfvar_linux_amd64.tar.gz"
-      sha256 "a65477a5850bd18bdb994b56414c0bb09d6c9373d5f9ca60cd8aba34f37bc660"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/shihanng/tfvar/releases/download/v0.8.1/tfvar_linux_arm64.tar.gz"
+      sha256 "fbd8c6ba1cd1a215cfc8976dc9ec8d0828ae8f4a757f7e2876c0508a93965d1a"
 
       def install
         bin.install Dir['tfvar']
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.8.0/tfvar_linux_armv6.tar.gz"
-      sha256 "f717b075748319f316951a4a03799a42814bdb77952ec1cb0fc723260537cfce"
+      url "https://github.com/shihanng/tfvar/releases/download/v0.8.1/tfvar_linux_armv6.tar.gz"
+      sha256 "e9209a91a00dbecc86ebba76bfcac477843a654262c75b90a3bd159f5a937d5b"
 
       def install
         bin.install Dir['tfvar']
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/shihanng/tfvar/releases/download/v0.8.0/tfvar_linux_arm64.tar.gz"
-      sha256 "fb31a216a392fd42069a5b704cccf1f47b1d7e59c098323755ff7a1f603bbedb"
+    if Hardware::CPU.intel?
+      url "https://github.com/shihanng/tfvar/releases/download/v0.8.1/tfvar_linux_amd64.tar.gz"
+      sha256 "09ed7ed2dc4f3a3d2367b4870ae8dfaa9ba13d1fa1dfc70810170bf848a21499"
 
       def install
         bin.install Dir['tfvar']
